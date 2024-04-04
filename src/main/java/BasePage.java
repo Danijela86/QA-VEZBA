@@ -25,7 +25,14 @@ public class BasePage {
 
 
         }
-
+        protected void typeText(String text, By locator) {
+        waitForElementToBeVisible(locator);  //da se prvo saceka da postane vidljiv
+          getDriver().findElement(locator).sendKeys(text);
+        }
+    protected String getElementText(By locator){
+        waitForElementToBeVisible(locator);
+        return getDriver().findElement(locator).getText();
+    }
     }
 
 
