@@ -1,9 +1,10 @@
+import PageMetods.DemoQaElements;
 import PageMetods.DemoQaHomepage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class ClicOnElemntsTestBoxTest extends DemoQaHomepage {
+public class ClicOnElemntsTekstBoxTest extends DemoQaHomepage {
     @BeforeEach
     public void setUp(){
         createDriver();
@@ -11,9 +12,12 @@ public class ClicOnElemntsTestBoxTest extends DemoQaHomepage {
     }
     @Test
     public void test(){
-DemoQaHomepage demo= new DemoQaHomepage();
-demo.clikOnElements().clickOnTextBox();
+        DemoQaHomepage demo= new DemoQaHomepage();
+        DemoQaElements demoQaElements = demo.clikOnElements();
+        demoQaElements.clickOnTextBox();
     }
     @AfterEach
-    public void close() {quitDriver();}
+    public void close() {
+        quitDriver();
+    }
 }

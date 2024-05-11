@@ -7,4 +7,6 @@ public class Locator {
     public static String ELEMENT_LIST_SHOW="//div[@class='element-list collapse show']";
 
 
+    public static String INPUT_BY_ID="//input[@id='%ARG%']";
+
 }

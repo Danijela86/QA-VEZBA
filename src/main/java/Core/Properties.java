@@ -34,7 +34,7 @@ public class Properties {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
 
-setDriver(driver);
+            setDriver(driver);
 
         }
     }
