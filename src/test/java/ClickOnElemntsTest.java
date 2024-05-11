@@ -3,7 +3,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class ClicOnElemntsTest extends DemoQaHomepage {
+public class ClickOnElemntsTest extends DemoQaHomepage {
     @BeforeEach
     public void setUp(){
         createDriver();
@@ -11,8 +11,8 @@ public class ClicOnElemntsTest extends DemoQaHomepage {
     }
     @Test
     public void test(){
-    DemoQaHomepage demo=new DemoQaHomepage();
-    demo.clikOnElements().verifyElementsListVisible();
+        DemoQaHomepage demo=new DemoQaHomepage();
+        demo.clikOnElements().verifyElementsListVisible();
     }
     @AfterEach
     public void close(){
