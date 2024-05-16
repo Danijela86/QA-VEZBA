@@ -7,8 +7,8 @@ import org.openqa.selenium.By;
 
 public class DemoQaFrames extends BasePage {
     private String getTextFromHeading(){
-        waitForElementToBeVisible(By.xpath(Locators.FRAMESHEADING));
-       return getElementText(By.xpath(Locators.FRAMESHEADING));
+        waitForElementToBeVisible(By.xpath(Locators.HEADER_SAMPLE_PAGE));
+       return getElementText(By.xpath(Locators.HEADER_SAMPLE_PAGE));
     }
     public DemoQaFrames verifyTextFormHeading(){
         Assertions.assertEquals("This is a sample page",

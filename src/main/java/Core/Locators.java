@@ -7,7 +7,8 @@ public class Locators {
     public static String ELEMENT_LIST_SHOW="//div[@class='element-list collapse show']";
     public static String INPUT_BY_ID = "//input[@id='%ARG%']";
 
-    public static String FRAMESHEADING ="//h1[@id='sampleHeading']";
-
+    public static String HEADER_SAMPLE_PAGE ="//h1[@id='sampleHeading']";
+    public static String NEW_TAB_BUTTON ="// button[@id='tabButton']";
+    public static String NEW_WINDOW_BUTTON ="// button[@id='windowButton']";
 
 }

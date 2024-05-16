@@ -1,9 +1,8 @@
 package Core;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import PageMetods.PracticeFormPage;
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BasePage extends Properties {
-
+ final String originalWindow = getDriver().getWindowHandle();
 
     protected void clickOneElement(By locator) {
         Properties.getDriver().findElement(locator).click();
@@ -31,15 +30,15 @@ protected int getElementCount(String locator){
 
     protected void typeText(String text, By locator) {
         waitForElementToBeVisible(locator);  //da se prvo saceka da postane vidljiv
-        Properties.getDriver().findElement(locator).sendKeys(text);
+        Properties.getDriver().findElement(locator).sendKeys(text);}
+
+        protected String getElementText(By locator) {
+            waitForElementToBeVisible(locator);
+            return Properties.getDriver().findElement(locator).getText();
+        }
+
+
     }
-
-    protected String getElementText(By locator) {
-        waitForElementToBeVisible(locator);
-        return Properties.getDriver().findElement(locator).getText();
-    }
-
-
     protected String getLocator(String locator, String arg) {
         return locator.replace("%ARG%", arg);
     }
@@ -63,7 +62,19 @@ private WebElement findElement (WebDriver driver, By by){
 public void scrollToElement(String locator){
         scrollToElement(getDriver(), findElement(getDriver(), By.xpath(locator)));
 }
+protected void switchToNewTab () {
+        getDriver().switchTo().newWindow(WindowType.TAB);
+}
+   protected void switchToNewWindow() {
+        getDriver().switchTo().newWindow(WindowType.WINDOW);
+   }
 
+   protected void switchToMainWindow() {
+        getDriver().switchTo().window(originalWindow);
+   }
+    protected void switchToMainPageContent() {
+        getDriver().switchTo().defaultContent();
+    }
 }
 
 

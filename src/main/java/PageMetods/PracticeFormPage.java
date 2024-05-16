@@ -25,4 +25,11 @@ public class PracticeFormPage extends BasePage {
     public PracticeFormPage verifyFirstName(String expectedName) {
         Assertions.assertEquals(expectedName, getElementText(By.xpath(getLocator(Locators.INPUT_BY_ID, Atributes.PRACTICE_FORM_FIRST_NAME))),"tEXT IV FIRST NAME INPUT FIELD IS NOT AS EXPEXT");
         return this;}
+    public PracticeFormPage verifyLastName(String expectedLastName) {
+        Assertions.assertEquals(expectedLastName, getElementText(By.xpath(getLocator(Locators.INPUT_BY_ID, Atributes.PRACTICE_FORM_LAST_NAME))),"tEXT IV FIRST NAME INPUT FIELD IS NOT AS EXPEXT");
+        return this;
+    }
+    public PracticeFormPage verifyUserEmail(String expectedUserEmail) {
+        Assertions.assertEquals(expectedUserEmail, getElementText(By.xpath(getLocator(Locators.INPUT_BY_ID, Atributes.PRACTICE_FORM_EMAIL))),"tEXT IV FIRST NAME INPUT FIELD IS NOT AS EXPEXT");
+        return this;}
 }

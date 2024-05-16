@@ -10,17 +10,19 @@ private final static String FIRST_NAME = "Vlada";
     @BeforeEach
 public void setUp(){
         createDriver();
-        getDriver().navigate().to("https    ");
+        getDriver().navigate().to("https://demoqa.com/automation-practice-form ");
 
     }
-//    @Test
-//    public void test(){
-//        PracticeFormPage practiceFormPage = new PracticeFormPage();
-//        practiceFormPage.typeFirstName(FIRST_NAME).verifyFirstName(FIRST_NAME).typelastName(LAST_NAME).typelastName(LAST_NAME)
-//                .typeEmail(EMAIL).verify
-//    }
-//
-//    @AfterEach
-//    public void close
+    @Test
+    public void test(){
+        PracticeFormPage practiceFormPage = new PracticeFormPage();
+       practiceFormPage.typeFirstName(FIRST_NAME).verifyFirstName(FIRST_NAME).typelastName(LAST_NAME).typelastName(LAST_NAME)
+               .typeEmail(EMAIL).verifyUserMail(EMAIL);
+   }
+
+   @AfterEach
+   public void close() {
+   quitDriver();
+   }
 
 }
