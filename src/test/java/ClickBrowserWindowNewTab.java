@@ -10,14 +10,16 @@ public class ClickBrowserWindowNewTabTest extends DemoQaBrowserWindow {
         createDriver();
         getDriver().navigate().to("https://demoqa.com/browser-windows");
     }
-         @Test
-                 public void test(){
-        DemoQaBrowserWindow = new demoQaBrowserWindow();
-        demoQaBrowser
 
-        }
+    @Test
+    public void test() {
+        DemoQaBrowserWindow demoQaBrowserWindow = new DemoQaBrowserWindow();
+        demoQaBrowserWindow.clickNewWindow().switchToNewlyOpenedWindow().verifyTextFormHeading();
+
+    }
+
     @AfterEach
-    public void close(){
+    public void close() {
         quitDriver();
     }
 }

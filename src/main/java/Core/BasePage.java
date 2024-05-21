@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class BasePage extends Properties {
  final String originalWindow = getDriver().getWindowHandle();
@@ -52,26 +53,31 @@ protected int getElementCount(String locator){
         }
         return isVisible;
     }
-protected void scrollToElement (WebDriver driver, WebElement element) {
+private void scrollToElement (WebDriver driver, WebElement element) {
     JavascriptExecutor js = (JavascriptExecutor) driver;
     js.executeScript("arguments[0].scrollIntoView(true);", element);
 }
 private WebElement findElement (WebDriver driver, By by){
         return driver.findElement(by);
 }
-public void scrollToElement(String locator){
+    public void scrollToElement(String locator){
         scrollToElement(getDriver(), findElement(getDriver(), By.xpath(locator)));
-}
-protected void switchToNewTab () {
-        getDriver().switchTo().newWindow(WindowType.TAB);
-}
-   protected void switchToNewWindow() {
-        getDriver().switchTo().newWindow(WindowType.WINDOW);
-   }
+    }
+    protected int getElementCount(String locator){
+List<WebElement> webElements = getDriver().findElements(By.xpath(locator));
+return webElements.size();
+    }
+    protected void switchToNewWindow() {
+        Set<String> handles = getDriver().getWindowHandles();
+    driver.switchTo().window((String) handles.toArray() [1]);
+    }
+    protected void switchToMainWindow() {
+    final String originalWindow = getDriver().getWindowHandle();}
 
-   protected void switchToMainWindow() {
-        getDriver().switchTo().window(originalWindow);
-   }
+
+
+
+
     protected void switchToMainPageContent() {
         getDriver().switchTo().defaultContent();
     }

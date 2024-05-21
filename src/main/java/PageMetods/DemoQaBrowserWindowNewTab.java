@@ -6,8 +6,12 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 
 public class DemoQaBrowserWindowNewTab extends BasePage {
+    public  DemoQaBrowserWindowNewTab swtchToNewlyOpenTab() {
+        switchToNewWindow();
+        return this;
+    }
 
-    public class DemoQaFrames extends BasePage {
+
         private String getTextFromHeading(){
             waitForElementToBeVisible(By.xpath(Locators.HEADER_SAMPLE_PAGE));
             return getElementText(By.xpath(Locators.HEADER_SAMPLE_PAGE));
